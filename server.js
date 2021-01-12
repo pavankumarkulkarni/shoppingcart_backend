@@ -2,7 +2,7 @@ const productsRouter = require("./Routes/products");
 const orderRouter = require("./Routes/orders");
 const userRouter = require("./Routes/users");
 const addressRouter = require("./Routes/address");
-
+const cors = require("cors");
 const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
@@ -16,7 +16,7 @@ app.use(
     extended: true,
   })
 );
-
+app.use(cors());
 mongoose
   .connect(process.env.MONGO_CLOUD_URI, {
     useNewUrlParser: true,
