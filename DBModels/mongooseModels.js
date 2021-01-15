@@ -10,6 +10,10 @@ const Product = mongoose.model(
     description: String,
     availableSizes: [String],
     price: Number,
+    img: {
+      data: Buffer,
+      contentType: String,
+    },
   })
 );
 
